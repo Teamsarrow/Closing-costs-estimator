@@ -9,16 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8B6F47;
-            --primary-dark: #6B5537;
-            --accent: #C19A6B;
-            --background: #FAFAF8;
+            --primary: #3b82f6;
+            --primary-dark: #1e3a5f;
+            --accent: #60a5fa;
+            --background: #f9fafb;
             --surface: #FFFFFF;
-            --text-primary: #2C2C2C;
-            --text-secondary: #666666;
-            --border: #E5E5E0;
-            --success: #5C8A5C;
-            --shadow: rgba(139, 111, 71, 0.08);
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border: #e5e7eb;
+            --success: #10b981;
+            --shadow: rgba(0, 0, 0, 0.05);
         }
 
         * {
@@ -33,6 +33,15 @@
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
+        }
+
+        header a {
+            color: white !important;
+            text-decoration: none;
+        }
+
+        header p {
+            color: white !important;
         }
 
         .container {
@@ -54,29 +63,7 @@
         }
 
         header {
-            text-align: center;
             margin-bottom: 3rem;
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
         }
 
         .subtitle {
@@ -90,6 +77,7 @@
             justify-content: center;
             gap: 1rem;
             margin-bottom: 3rem;
+            margin-top: 1.5rem;
             animation: fadeIn 0.8s ease-out 0.2s backwards;
         }
 
@@ -108,16 +96,16 @@
         }
 
         .toggle-btn:hover {
-            border-color: var(--accent);
+            border-color: #60a5fa;
             transform: translateY(-2px);
-            box-shadow: 0 8px 16px var(--shadow);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.1);
         }
 
         .toggle-btn.active {
-            background: var(--primary);
+            background: #3b82f6;
             color: white;
-            border-color: var(--primary);
-            box-shadow: 0 4px 12px var(--shadow);
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
         }
 
         .calculator {
@@ -134,24 +122,24 @@
         }
 
         .input-section {
-            background: var(--surface);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px var(--shadow);
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
         }
 
         .section-title {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.8rem;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1.3rem;
             font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border);
+            color: #1e3a5f;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             animation: slideUp 0.5s ease-out backwards;
         }
 
@@ -176,8 +164,8 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
-            color: var(--text-primary);
-            font-size: 0.95rem;
+            color: #4a5568;
+            font-size: 0.9rem;
         }
 
         .input-wrapper {
@@ -189,8 +177,8 @@
             left: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-secondary);
-            font-weight: 500;
+            color: #6b7280;
+            font-weight: 400;
             pointer-events: none;
         }
 
@@ -199,22 +187,24 @@
             right: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-secondary);
-            font-weight: 500;
+            color: #6b7280;
+            font-weight: 400;
             pointer-events: none;
         }
 
         input[type="number"],
         input[type="text"],
-        input[type="date"] {
+        input[type="date"],
+        select {
             width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
             font-size: 1rem;
             font-family: 'Work Sans', sans-serif;
-            transition: all 0.3s ease;
-            background: var(--background);
+            transition: all 0.2s ease;
+            background: white;
+            color: #1f2937;
         }
 
         input[type="number"].with-currency {
@@ -225,19 +215,19 @@
             padding-right: 2rem;
         }
 
-        input:focus {
+        input:focus,
+        select:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(139, 111, 71, 0.1);
-            background: var(--surface);
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
         .summary-panel {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
             padding: 2.5rem;
             border-radius: 16px;
             color: white;
-            box-shadow: 0 8px 32px rgba(139, 111, 71, 0.2);
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.2);
             position: sticky;
             top: 2rem;
             max-height: calc(100vh - 4rem);
@@ -245,7 +235,7 @@
         }
 
         .summary-title {
-            font-family: 'Crimson Pro', serif;
+            font-family: 'Work Sans', sans-serif;
             font-size: 1.6rem;
             font-weight: 600;
             margin-bottom: 2rem;
@@ -302,13 +292,13 @@
         }
 
         .total-label {
-            font-family: 'Crimson Pro', serif;
+            font-family: 'Work Sans', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
         }
 
         .total-value {
-            font-family: 'Crimson Pro', serif;
+            font-family: 'Work Sans', sans-serif;
             font-size: 2.25rem;
             font-weight: 700;
             font-variant-numeric: tabular-nums;
@@ -358,8 +348,21 @@
 <body>
     <div class="container">
         <header>
-            <h1>Closing Costs Calculator</h1>
-            <p class="subtitle">Estimate your transaction costs with precision</p>
+            <div style="background: #2C2C2C; padding: 2rem 3rem; margin: -3rem -2rem 3rem -2rem; border-bottom: 4px solid #C19A6B;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h1 style="font-size: 2rem; margin: 0; color: white; letter-spacing: 0.05em;">JONATHAN SARROW</h1>
+                        <p style="font-size: 1.5rem; margin: 0.25rem 0 0 0; color: white; letter-spacing: 0.05em;">HOMES & PROPERTIES</p>
+                    </div>
+                    <div style="text-align: right; color: white;">
+                        <p style="margin: 0; font-size: 0.95rem; color: white;">Realtor® | DRE #02151231</p>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.95rem; color: white;">818.469.5309</p>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.95rem; color: white;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="701a1f1e110418111e5e031102021f0730171d11191c5e131f1d">[email&#160;protected]</a></p>
+                    </div>
+                </div>
+            </div>
+            <h1 style="font-family: 'Work Sans', sans-serif; font-size: 3rem; font-weight: 700; color: #1e3a5f; margin-bottom: 0.25rem; letter-spacing: -0.02em; text-align: center;">Closing Costs Calculator</h1>
+            <p class="subtitle" style="text-align: center;">Estimate your transaction costs with precision</p>
         </header>
 
         <div class="toggle-container">
@@ -376,7 +379,7 @@
                     <label for="buyerPurchasePrice">Purchase Price</label>
                     <div class="input-wrapper">
                         <span class="currency-symbol">$</span>
-                        <input type="number" id="buyerPurchasePrice" class="with-currency" value="400000" min="0" step="1000">
+                        <input type="number" id="buyerPurchasePrice" class="with-currency" value="1000000" min="0" step="1000">
                     </div>
                 </div>
 
@@ -412,13 +415,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="titleInsurance">Title Insurance & Search</label>
-                    <div class="input-wrapper">
-                        <span class="currency-symbol">$</span>
-                        <input type="number" id="titleInsurance" class="with-currency" value="1500" min="0" step="100">
-                    </div>
-                </div>
+
 
                 <div class="form-group">
                     <label for="recordingFees">Recording Fees</label>
@@ -472,14 +469,6 @@
                         <span class="percent-symbol">%</span>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="pmiRate">PMI Rate (% annually, if applicable)</label>
-                    <div class="input-wrapper">
-                        <input type="number" id="pmiRate" class="with-percent" value="0" min="0" max="5" step="0.1">
-                        <span class="percent-symbol">%</span>
-                    </div>
-                </div>
             </div>
 
             <div class="summary-panel">
@@ -501,8 +490,12 @@
                     <span class="cost-value" id="inspectionAmount">$0</span>
                 </div>
                 <div class="cost-item">
-                    <span class="cost-label">Title Insurance & Search</span>
+                    <span class="cost-label">Title Insurance (est. 0.2%)</span>
                     <span class="cost-value" id="titleAmount">$0</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Escrow Fees (est. 0.25%)</span>
+                    <span class="cost-value" id="escrowAmount">$0</span>
                 </div>
                 <div class="cost-item">
                     <span class="cost-label">Recording Fees</span>
@@ -539,6 +532,35 @@
                     </div>
                     <div class="percentage-info" id="buyerPercentage">0% of purchase price</div>
                 </div>
+
+                <div class="total-section" style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid rgba(255, 255, 255, 0.3);">
+                    <h3 class="summary-title" style="font-size: 1.4rem; margin-bottom: 1.5rem;">Estimated Monthly Payment</h3>
+                    <div class="cost-item">
+                        <span class="cost-label">Principal & Interest</span>
+                        <span class="cost-value" id="monthlyPI">$0</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Property Tax</span>
+                        <span class="cost-value" id="monthlyPropertyTax">$0</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Homeowners Insurance</span>
+                        <span class="cost-value" id="monthlyInsurance">$0</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">HOA Fees</span>
+                        <span class="cost-value" id="monthlyHOADisplay">$0</span>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">PMI (if applicable)</span>
+                        <span class="cost-value" id="monthlyPMI">$0</span>
+                    </div>
+                    <div class="total-row" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.3);">
+                        <span class="total-label">Total Monthly Payment</span>
+                        <span class="total-value" id="totalMonthlyPayment">$0</span>
+                    </div>
+                </div>
+
                 <div class="note">
                     <strong>Note:</strong> This is an estimate. Actual closing costs may vary based on location, lender, property type, and specific transaction details. Consult with your lender and real estate professional for precise figures.
                 </div>
@@ -554,14 +576,35 @@
                     <label for="sellerSalePrice">Sale Price</label>
                     <div class="input-wrapper">
                         <span class="currency-symbol">$</span>
-                        <input type="number" id="sellerSalePrice" class="with-currency" value="400000" min="0" step="1000">
+                        <input type="number" id="sellerSalePrice" class="with-currency" value="1000000" min="0" step="1000">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="agentCommission">Real Estate Commission (%)</label>
+                    <label for="sellerClosingDate">Estimated Closing Date</label>
+                    <input type="date" id="sellerClosingDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="sellerAnnualPropertyTax">Annual Property Tax</label>
                     <div class="input-wrapper">
-                        <input type="number" id="agentCommission" class="with-percent" value="5" min="0" max="10" step="0.5">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="sellerAnnualPropertyTax" class="with-currency" value="12000" min="0" step="100">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="listingAgentCommission">Listing Agent Commission (%)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="listingAgentCommission" class="with-percent" value="2.5" min="0" max="10" step="0.5">
+                        <span class="percent-symbol">%</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="buyerAgentCommission">Buyer Agent Commission (%)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="buyerAgentCommission" class="with-percent" value="2.5" min="0" max="10" step="0.5">
                         <span class="percent-symbol">%</span>
                     </div>
                 </div>
@@ -575,11 +618,21 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="transferTax">Transfer Tax (%)</label>
-                    <div class="input-wrapper">
-                        <input type="number" id="transferTax" class="with-percent" value="0.5" min="0" max="5" step="0.1">
-                        <span class="percent-symbol">%</span>
-                    </div>
+                    <label for="citySelector">City/Location (for transfer tax)</label>
+                    <select id="citySelector">
+                        <option value="0.0056">Los Angeles City (0.56%)</option>
+                        <option value="0.0011">Unincorporated LA County (0.11%)</option>
+                        <option value="0.0156">Santa Monica (1.56%)</option>
+                        <option value="0.0156">Culver City (1.56%)</option>
+                        <option value="0.0106">Beverly Hills (1.06%)</option>
+                        <option value="0.0106">West Hollywood (1.06%)</option>
+                        <option value="0.0056">Pasadena (0.56%)</option>
+                        <option value="0.0056">Glendale (0.56%)</option>
+                        <option value="0.0056">Burbank (0.56%)</option>
+                        <option value="0.0056">Long Beach (0.56%)</option>
+                        <option value="0.0056">Torrance (0.56%)</option>
+                        <option value="0.0011">Other LA County City (0.11%)</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -630,8 +683,16 @@
                     <span class="cost-value" id="salePriceDisplay">$0</span>
                 </div>
                 <div class="cost-item">
-                    <span class="cost-label">Real Estate Commission</span>
-                    <span class="cost-value" id="commissionAmount">-$0</span>
+                    <span class="cost-label">Listing Agent Commission</span>
+                    <span class="cost-value" id="listingCommissionAmount">-$0</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Buyer Agent Commission</span>
+                    <span class="cost-value" id="buyerCommissionAmount">-$0</span>
+                </div>
+                <div class="cost-item">
+                    <span class="cost-label">Prorated Property Tax</span>
+                    <span class="cost-value" id="proratedPropertyTax">-$0</span>
                 </div>
                 <div class="cost-item">
                     <span class="cost-label">Title & Escrow Fees</span>
@@ -675,7 +736,7 @@
         </div>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Toggle between buyer and seller
         const buyerBtn = document.getElementById('buyerBtn');
         const sellerBtn = document.getElementById('sellerBtn');
@@ -706,6 +767,16 @@
             }).format(amount);
         }
 
+        // Calculate title insurance at 0.2% of purchase price
+        function calculateTitleCosts(purchasePrice) {
+            return purchasePrice * 0.002;
+        }
+
+        // Calculate escrow fees at 0.25% of purchase price
+        function calculateEscrowFees(purchasePrice) {
+            return purchasePrice * 0.0025;
+        }
+
         // Buyer Calculator
         function calculateBuyerCosts() {
             const purchasePrice = parseFloat(document.getElementById('buyerPurchasePrice').value) || 0;
@@ -713,9 +784,12 @@
             const loanOriginationFee = parseFloat(document.getElementById('loanOriginationFee').value) || 0;
             const appraisalFee = parseFloat(document.getElementById('buyerAppraisalFee').value) || 0;
             const inspectionFee = parseFloat(document.getElementById('homeInspection').value) || 0;
-            const titleFee = parseFloat(document.getElementById('titleInsurance').value) || 0;
             const recordingFee = parseFloat(document.getElementById('recordingFees').value) || 0;
             const attorneyFee = parseFloat(document.getElementById('attorneyFees').value) || 0;
+
+            // Calculate title and escrow fees
+            const titleFee = calculateTitleCosts(purchasePrice);
+            const escrowFee = calculateEscrowFees(purchasePrice);
 
             // New prepaid calculations
             const closingDateStr = document.getElementById('closingDate').value;
@@ -723,7 +797,6 @@
             const annualInsurance = parseFloat(document.getElementById('annualHomeInsurance').value) || 0;
             const monthlyHOA = parseFloat(document.getElementById('monthlyHOA').value) || 0;
             const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
-            const pmiRate = parseFloat(document.getElementById('pmiRate').value) || 0;
 
             const downPayment = purchasePrice * (downPaymentPercent / 100);
             const loanAmount = purchasePrice - downPayment;
@@ -762,22 +835,23 @@
                 const dailyInterest = (loanAmount * (interestRate / 100)) / 365;
                 prepaidInterest = dailyInterest * daysRemaining;
 
-                // PMI (if applicable - typically 2 months prepaid)
-                if (downPaymentPercent < 20 && pmiRate > 0) {
-                    const monthlyPMI = (loanAmount * (pmiRate / 100)) / 12;
+                // PMI (if applicable - typically 2 months prepaid at 1% annually)
+                if (downPaymentPercent < 20 && loanAmount > 0) {
+                    const monthlyPMI = (loanAmount * 0.01) / 12;
                     pmiPrepaid = monthlyPMI * 2;
                 }
             }
 
             const totalPrepaid = propertyTaxPrepaid + insurancePrepaid + hoaPrepaid + prepaidInterest + pmiPrepaid;
             const totalCosts = downPayment + originationFee + appraisalFee + inspectionFee + 
-                              titleFee + recordingFee + attorneyFee + totalPrepaid;
+                              titleFee + escrowFee + recordingFee + attorneyFee + totalPrepaid;
 
             document.getElementById('downPaymentAmount').textContent = formatCurrency(downPayment);
             document.getElementById('originationAmount').textContent = formatCurrency(originationFee);
             document.getElementById('appraisalAmount').textContent = formatCurrency(appraisalFee);
             document.getElementById('inspectionAmount').textContent = formatCurrency(inspectionFee);
             document.getElementById('titleAmount').textContent = formatCurrency(titleFee);
+            document.getElementById('escrowAmount').textContent = formatCurrency(escrowFee);
             document.getElementById('recordingAmount').textContent = formatCurrency(recordingFee);
             document.getElementById('attorneyAmount').textContent = formatCurrency(attorneyFee);
             
@@ -792,30 +866,103 @@
 
             const percentage = purchasePrice > 0 ? ((totalCosts / purchasePrice) * 100).toFixed(1) : 0;
             document.getElementById('buyerPercentage').textContent = `${percentage}% of purchase price`;
+
+            // Calculate Monthly Payment
+            const monthlyInterestRate = (interestRate / 100) / 12;
+            const numberOfPayments = 30 * 12; // 30-year mortgage
+            
+            let monthlyPI = 0;
+            if (loanAmount > 0 && interestRate > 0) {
+                // Standard mortgage payment formula
+                monthlyPI = loanAmount * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / 
+                           (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+            }
+
+            const monthlyPropertyTax = annualPropertyTax / 12;
+            const monthlyInsurance = annualInsurance / 12;
+            const monthlyHOAFees = monthlyHOA;
+            
+            // Monthly PMI calculation (1% of original loan amount annually)
+            let monthlyPMIPayment = 0;
+            if (downPaymentPercent < 20 && loanAmount > 0) {
+                monthlyPMIPayment = (loanAmount * 0.01) / 12;
+            }
+
+            const totalMonthly = monthlyPI + monthlyPropertyTax + monthlyInsurance + monthlyHOAFees + monthlyPMIPayment;
+
+            // Display monthly payment breakdown
+            document.getElementById('monthlyPI').textContent = formatCurrency(monthlyPI);
+            document.getElementById('monthlyPropertyTax').textContent = formatCurrency(monthlyPropertyTax);
+            document.getElementById('monthlyInsurance').textContent = formatCurrency(monthlyInsurance);
+            document.getElementById('monthlyHOADisplay').textContent = formatCurrency(monthlyHOAFees);
+            document.getElementById('monthlyPMI').textContent = formatCurrency(monthlyPMIPayment);
+            document.getElementById('totalMonthlyPayment').textContent = formatCurrency(totalMonthly);
         }
 
         // Seller Calculator
         function calculateSellerCosts() {
             const salePrice = parseFloat(document.getElementById('sellerSalePrice').value) || 0;
-            const commission = parseFloat(document.getElementById('agentCommission').value) || 0;
+            const sellerClosingDateStr = document.getElementById('sellerClosingDate').value;
+            const sellerAnnualPropertyTax = parseFloat(document.getElementById('sellerAnnualPropertyTax').value) || 0;
+            const listingCommission = parseFloat(document.getElementById('listingAgentCommission').value) || 0;
+            const buyerCommission = parseFloat(document.getElementById('buyerAgentCommission').value) || 0;
             const titleFees = parseFloat(document.getElementById('sellerTitleFees').value) || 0;
-            const transferTaxPercent = parseFloat(document.getElementById('transferTax').value) || 0;
+            const transferTaxRate = parseFloat(document.getElementById('citySelector').value) || 0;
             const attorneyFees = parseFloat(document.getElementById('sellerAttorneyFees').value) || 0;
             const survey = parseFloat(document.getElementById('propertySurvey').value) || 0;
             const hoa = parseFloat(document.getElementById('hoaDues').value) || 0;
             const mortgage = parseFloat(document.getElementById('mortgagePayoff').value) || 0;
             const repairs = parseFloat(document.getElementById('repairCredits').value) || 0;
 
-            const commissionAmount = salePrice * (commission / 100);
-            const transferTax = salePrice * (transferTaxPercent / 100);
+            const listingCommissionAmount = salePrice * (listingCommission / 100);
+            const buyerCommissionAmount = salePrice * (buyerCommission / 100);
+            const totalCommission = listingCommissionAmount + buyerCommissionAmount;
+            const transferTax = salePrice * transferTaxRate;
 
-            const totalCosts = commissionAmount + titleFees + transferTax + attorneyFees + 
+            // Calculate prorated property tax (seller's portion of UNPAID taxes in current period)
+            // Assumption: Seller has made timely payments
+            let proratedPropertyTax = 0;
+            if (sellerClosingDateStr && sellerAnnualPropertyTax > 0) {
+                const closingDate = new Date(sellerClosingDateStr);
+                const month = closingDate.getMonth(); // 0-11
+                const day = closingDate.getDate();
+                
+                // Determine which tax period we're in and calculate seller's unpaid portion
+                if (month >= 6 && month <= 11) {
+                    // First half: July 1 - Dec 31 (payment due Nov 1, delinquent Dec 10)
+                    // If closing before Nov 1, seller hasn't paid yet
+                    // If closing after Nov 1, seller already paid - no proration needed unless closing after Jan 1
+                    if (month < 10 || (month === 10 && day < 1)) {
+                        // Closing before Nov 1 - seller owes for July 1 to closing date
+                        const july1 = new Date(closingDate.getFullYear(), 6, 1);
+                        const daysOwned = Math.ceil((closingDate - july1) / (1000 * 60 * 60 * 24)) + 1;
+                        const daysInPeriod = 184; // July 1 - Dec 31 (184 days)
+                        proratedPropertyTax = (sellerAnnualPropertyTax / 2) * (daysOwned / daysInPeriod);
+                    }
+                    // If closing after Nov 1, seller already paid first half - no proration
+                } else {
+                    // Second half: Jan 1 - June 30 (payment due Feb 1, delinquent Apr 10)
+                    // Seller owes for their portion of Jan 1 to closing date
+                    const jan1 = month === 0 ? 
+                        new Date(closingDate.getFullYear(), 0, 1) : 
+                        new Date(closingDate.getFullYear(), 0, 1);
+                    const daysOwned = Math.ceil((closingDate - jan1) / (1000 * 60 * 60 * 24)) + 1;
+                    const daysInPeriod = 181; // Jan 1 - June 30 (181 days in non-leap year, 182 in leap)
+                    const isLeapYear = (closingDate.getFullYear() % 4 === 0 && closingDate.getFullYear() % 100 !== 0) || (closingDate.getFullYear() % 400 === 0);
+                    const actualDaysInPeriod = isLeapYear ? 182 : 181;
+                    proratedPropertyTax = (sellerAnnualPropertyTax / 2) * (daysOwned / actualDaysInPeriod);
+                }
+            }
+
+            const totalCosts = totalCommission + proratedPropertyTax + titleFees + transferTax + attorneyFees + 
                               survey + hoa + mortgage + repairs;
 
             const netProceeds = salePrice - totalCosts;
 
             document.getElementById('salePriceDisplay').textContent = formatCurrency(salePrice);
-            document.getElementById('commissionAmount').textContent = '-' + formatCurrency(commissionAmount);
+            document.getElementById('listingCommissionAmount').textContent = '-' + formatCurrency(listingCommissionAmount);
+            document.getElementById('buyerCommissionAmount').textContent = '-' + formatCurrency(buyerCommissionAmount);
+            document.getElementById('proratedPropertyTax').textContent = '-' + formatCurrency(proratedPropertyTax);
             document.getElementById('sellerTitleAmount').textContent = '-' + formatCurrency(titleFees);
             document.getElementById('transferTaxAmount').textContent = '-' + formatCurrency(transferTax);
             document.getElementById('sellerAttorneyAmount').textContent = '-' + formatCurrency(attorneyFees);
@@ -835,7 +982,6 @@
         document.getElementById('loanOriginationFee').addEventListener('input', calculateBuyerCosts);
         document.getElementById('buyerAppraisalFee').addEventListener('input', calculateBuyerCosts);
         document.getElementById('homeInspection').addEventListener('input', calculateBuyerCosts);
-        document.getElementById('titleInsurance').addEventListener('input', calculateBuyerCosts);
         document.getElementById('recordingFees').addEventListener('input', calculateBuyerCosts);
         document.getElementById('attorneyFees').addEventListener('input', calculateBuyerCosts);
         document.getElementById('closingDate').addEventListener('input', calculateBuyerCosts);
@@ -843,13 +989,15 @@
         document.getElementById('annualHomeInsurance').addEventListener('input', calculateBuyerCosts);
         document.getElementById('monthlyHOA').addEventListener('input', calculateBuyerCosts);
         document.getElementById('interestRate').addEventListener('input', calculateBuyerCosts);
-        document.getElementById('pmiRate').addEventListener('input', calculateBuyerCosts);
 
         // Add event listeners for seller inputs
         document.getElementById('sellerSalePrice').addEventListener('input', calculateSellerCosts);
-        document.getElementById('agentCommission').addEventListener('input', calculateSellerCosts);
+        document.getElementById('sellerClosingDate').addEventListener('input', calculateSellerCosts);
+        document.getElementById('sellerAnnualPropertyTax').addEventListener('input', calculateSellerCosts);
+        document.getElementById('listingAgentCommission').addEventListener('input', calculateSellerCosts);
+        document.getElementById('buyerAgentCommission').addEventListener('input', calculateSellerCosts);
         document.getElementById('sellerTitleFees').addEventListener('input', calculateSellerCosts);
-        document.getElementById('transferTax').addEventListener('input', calculateSellerCosts);
+        document.getElementById('citySelector').addEventListener('change', calculateSellerCosts);
         document.getElementById('sellerAttorneyFees').addEventListener('input', calculateSellerCosts);
         document.getElementById('propertySurvey').addEventListener('input', calculateSellerCosts);
         document.getElementById('hoaDues').addEventListener('input', calculateSellerCosts);
@@ -860,10 +1008,14 @@
         const defaultClosingDate = new Date();
         defaultClosingDate.setDate(defaultClosingDate.getDate() + 30);
         document.getElementById('closingDate').valueAsDate = defaultClosingDate;
+        document.getElementById('sellerClosingDate').valueAsDate = defaultClosingDate;
 
         // Initial calculations
         calculateBuyerCosts();
         calculateSellerCosts();
     </script>
-</body>
-</html>
+
+    <footer style="background: var(--background); padding: 2rem 3rem; margin: 3rem -2rem 0 -2rem; border-top: 1px solid var(--border);">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 300px;">
+                <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);"><strong>Disclaimer:</strong> This is an estimate. Actual closing costs may vary based on location, lender, property type, and specific
