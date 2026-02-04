@@ -77,7 +77,7 @@
             justify-content: center;
             gap: 1rem;
             margin-bottom: 3rem;
-            margin-top: 1.5rem;
+            margin-top: 0.5rem;
             animation: fadeIn 0.8s ease-out 0.2s backwards;
         }
 
@@ -93,6 +93,7 @@
             border-radius: 12px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             letter-spacing: 0.02em;
+            min-width: 220px;
         }
 
         .toggle-btn:hover {
@@ -362,12 +363,12 @@
                 </div>
             </div>
             <h1 style="font-family: 'Work Sans', sans-serif; font-size: 3rem; font-weight: 700; color: #1e3a5f; margin-bottom: 0.25rem; letter-spacing: -0.02em; text-align: center;">Closing Costs Calculator</h1>
-            <p class="subtitle" style="text-align: center;">Estimate your transaction costs with precision</p>
+            <p class="subtitle" style="text-align: center; margin-bottom: 0;">Estimate your transaction costs with precision</p>
         </header>
 
         <div class="toggle-container">
             <button class="toggle-btn active" id="buyerBtn">Buyer Costs</button>
-            <button class="toggle-btn" id="sellerBtn">Seller Costs</button>
+            <button class="toggle-btn" id="sellerBtn">Seller Net Proceeds</button>
         </div>
 
         <!-- BUYER CALCULATOR -->
@@ -736,7 +737,7 @@
         </div>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Toggle between buyer and seller
         const buyerBtn = document.getElementById('buyerBtn');
         const sellerBtn = document.getElementById('sellerBtn');
@@ -1018,4 +1019,13 @@
     <footer style="background: var(--background); padding: 2rem 3rem; margin: 3rem -2rem 0 -2rem; border-top: 1px solid var(--border);">
         <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <div style="flex: 1; min-width: 300px;">
-                <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);"><strong>Disclaimer:</strong> This is an estimate. Actual closing costs may vary based on location, lender, property type, and specific 
+                <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;"><strong>Disclaimer:</strong> This is an estimate. Actual closing costs may vary based on location, lender, property type, and specific transaction details. Consult with your lender and real estate professional for precise figures.</p>
+            </div>
+            <div style="text-align: right; min-width: 250px;">
+                <p style="margin: 0; font-size: 1.1rem; font-weight: 600; color: #BB2326;">SHE IS HOPE Realty</p>
+                <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: #BB2326;">DRE #02098386</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
